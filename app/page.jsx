@@ -142,9 +142,9 @@ export default function Page() {
           </div>
           <div className="zfoot">
             <p className="zsub">
-              Geoporte is an engineering and advisory consultancy delivering high-impact infrastructure design with quality and agility. Our
-              experienced engineers support transport, water, buildings, ports and marine, and mining projects across Australia, New
-              Zealand, the UK, Canada and the Middle East.
+              Civil, geotechnical and structural engineering and advisory for New Zealand&apos;s transport, water, land development and
+              resilience projects. Our engineers understand the country&apos;s challenging ground conditions and work closely with councils,
+              developers and asset owners to deliver practical, well-engineered solutions.
             </p>
             <div className="zcue" id="zcue">
               <span />
