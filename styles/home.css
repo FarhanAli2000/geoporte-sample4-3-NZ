@@ -126,10 +126,11 @@
 .sres small{color:var(--amber);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase}
 .sempty{color:var(--muted);font-size:.9rem;padding:10px 12px}
 /* ---------- hero (scroll into the word) ---------- */
-.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;isolation:isolate;background:#0a0a0c}
+/* --zlift raises the headline group above centre so the supporting text and buttons fit below it */
+.hero{--zlift:min(18svh,190px);position:relative;height:100svh;min-height:600px;overflow:hidden;isolation:isolate;background:#0a0a0c}
 .zvid{position:absolute;inset:-4%;z-index:0}
 .zvid video{width:100%;height:100%;object-fit:cover}
-.zmask{position:absolute;inset:0;z-index:1;background:#0a0a0c;mix-blend-mode:multiply;display:grid;place-items:center;pointer-events:none}
+.zmask{position:absolute;inset:0;z-index:1;background:#0a0a0c;mix-blend-mode:multiply;display:grid;place-items:center;padding-bottom:var(--zlift);pointer-events:none}
 .zword{display:flex;flex-direction:column;align-items:center;font:900 clamp(2.2rem,8.6vw,9.5rem)/.86 var(--f-display);letter-spacing:-.045em;color:#fff;user-select:none}
 .zline{display:flex;white-space:nowrap}
 .zword span{display:inline-block}
@@ -138,14 +139,15 @@
 .zshine{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:overlay;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%) no-repeat;background-size:250% 100%;background-position:150% 0;animation:shine 5.5s ease-in-out 2.4s infinite}
 @keyframes shine{0%{background-position:150% 0}45%,100%{background-position:-50% 0}}
 /* rows: equal spacers keep the eyebrow/tagline centred on the headline; the bottom row stacks the supporting text and scroll cue */
-.zintro{position:absolute;inset:0;z-index:3;display:grid;grid-template-rows:minmax(0,1fr) auto minmax(0,1fr);justify-items:center;pointer-events:none}
+.zintro{position:absolute;inset:0 0 var(--zlift);z-index:3;display:grid;grid-template-rows:minmax(0,1fr) auto minmax(0,1fr);justify-items:center;pointer-events:none}
 .zintro-in{grid-row:2}
-.zfoot{grid-row:3;align-self:stretch;min-height:0;display:flex;flex-direction:column;align-items:center;padding:0 20px 30px}
+.zfoot{grid-row:3;align-self:stretch;min-height:0;margin-bottom:calc(-1 * var(--zlift));display:flex;flex-direction:column;align-items:center;padding:0 20px 30px}
 .zintro-in{display:grid;justify-items:center;gap:calc(clamp(2.2rem,8.6vw,9.5rem)*1.72 + 56px)}
 .zintro .hero-eyebrow,.zintro p{font-size:.62rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,240,236,.75);display:flex;align-items:center;gap:14px}
 .zintro .hero-eyebrow{color:var(--amber)}
 .zintro p.zsub{max-width:40rem;margin-top:22px;display:block;text-align:center;font-size:1rem;font-weight:400;line-height:1.65;letter-spacing:0;text-transform:none;color:rgba(242,240,236,.84)}
 .zintro .hero-eyebrow::before,.zintro .hero-eyebrow::after{content:"";width:32px;height:1px;background:currentColor}
+.zacts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:26px;pointer-events:auto}
 .zcue{margin-top:auto;padding-top:24px;display:grid;justify-items:center;gap:10px;font-size:.56rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(242,240,236,.7)}
 .zcue span{width:22px;height:36px;border:1.5px solid rgba(242,240,236,.5);border-radius:12px;position:relative}
 .zcue span::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:var(--amber);animation:wheel 1.6s ease-in-out infinite}

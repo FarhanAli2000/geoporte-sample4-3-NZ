@@ -136,7 +136,7 @@ export default function Page() {
         <div className="zintro" id="zintro">
           <div className="zintro-in">
             <div className="hero-eyebrow" aria-hidden="true">
-              Engineering for a connected tomorrow
+              Geoporte New Zealand
             </div>
             <p aria-hidden="true">Design · Engineering · Advisory</p>
           </div>
@@ -146,6 +146,14 @@ export default function Page() {
               resilience projects. Our engineers understand the country&apos;s challenging ground conditions and work closely with councils,
               developers and asset owners to deliver practical, well-engineered solutions.
             </p>
+            <div className="zacts" id="zacts">
+              <a href="#services" className="pill pill-a">
+                Explore Our Services <Arrow />
+              </a>
+              <a href="#contact" className="pill pill-o">
+                Talk to an Engineer
+              </a>
+            </div>
             <div className="zcue" id="zcue">
               <span />
               Scroll to enter

@@ -5,9 +5,6 @@
   if(!el)return;
 
   const OFFICES=[
-    {city:'Melbourne',country:'Australia',addr:'Tower 5, Collins Square, 727 Collins Street, Melbourne, VIC, 3008, Australia'},
-    {city:'Sydney',country:'Australia',addr:'Three International Towers, 300 Barangaroo Ave, Barangaroo NSW, Australia 2000'},
-    {city:'Perth',country:'Australia',addr:'108 St Georges Terrace, Perth, WA, Australia 6000'},
     {city:'Auckland',country:'New Zealand',addr:'110 Carlton Gore Road, New Market, Auckland, New Zealand 1023'}
   ];
 
@@ -27,7 +24,7 @@
   const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 
   const n=OFFICES.length;
-  el.innerHTML=`<div class="map-head"><div class="map-tag"><b>${n}</b> ${n>1?'offices':'office'} · Australia &amp; New Zealand</div><div class="map-chips" role="group" aria-label="Show office on map">${OFFICES.map((o,i)=>`<button type="button" data-k="${i}">${o.city}</button>`).join('')}</div></div><iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
+  el.innerHTML=`<div class="map-head"><div class="map-tag"><b>${n}</b> ${n>1?'offices':'office'} · New Zealand</div><div class="map-chips" role="group" aria-label="Show office on map">${OFFICES.map((o,i)=>`<button type="button" data-k="${i}">${o.city}</button>`).join('')}</div></div><iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
   const frame=el.querySelector('iframe');
   const chips=[...el.querySelectorAll('.map-chips button')];
   const cards=[...document.querySelectorAll('.office')].map(c=>{const b=c.querySelector('b');const k=b?OFFICES.findIndex(o=>b.textContent.trim().startsWith(o.city)):-1;return{c,k}}).filter(x=>x.k>-1);
